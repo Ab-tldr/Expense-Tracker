@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up Page</title>
+  <?php
+    if(isset($_GET["error"]) && $_GET["error"] === "InvalidCredentials"){
+      echo '<script>alert("Invalid Credentials");</script>'; ;
+    }
+    ?>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4d62bd;
+    background-image: url('expense.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #4d62bd;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background-color: black;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0c00b3;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .signup-link {
+      color: black;
+    }
+
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Login</h2>
+  <form action="includes/login.inc.php" method="post">
+    <div class="form-group">
+      <label for="username">USERNAME:</label>
+      <input type="username" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group text-center">
+      <button type="submit" class="btn">Login</button>
+    </div>
+  </form>
+  <div class="text-center">
+    <span>Don't have an account? <a href="signup.php" class="signup-link">Sign Up</a></span>
+  </div>
+</div>
+
+</body>
+</html>
